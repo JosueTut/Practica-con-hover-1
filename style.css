@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: aquamarine;
+}
+
+.imagenes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.imagenes-container .imagen {
+    position: relative;
+    margin: 1rem;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.imagenes-container .imagen img {
+    width: 15rem;
+    height: 15rem;
+    transition: transform 0.2s ease-in-out;
+    object-fit: cover;
+}
+
+.imagenes-container .imagen .nombre {
+    position: absolute;
+    background-color: black;
+    border-radius: .5rem;
+    color: white;
+    display: none;
+    min-width: 10rem;
+    width: 18rem;
+    top: -5.5rem;
+    padding: 1rem 1.5rem;   
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.imagenes-container .imagen .nombre .text {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 15rem;
+}
+
+.imagenes-container .imagen:hover .nombre {
+    display: inline-block;
+    transform: translateY(-3rem);
+}
+
+.imagenes-container .imagen .nombre::before {
+    content: "";
+    position: absolute;
+    width: .1rem;
+    height: .1rem;
+    left: 40%;
+    bottom: -2rem;
+    border-top: 1rem solid black;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+}
+
+.imagenes-container .imagen:hover img {
+    transform: translateY(-1.5rem);
+}
+
+@media (max-width: 850px) {
+    .imagenes-container {
+        flex-direction: column;
+        height: 180vh;
+    }
+    .imagenes-container .imagen img {
+        margin-bottom: 4rem;
+    }
+}
